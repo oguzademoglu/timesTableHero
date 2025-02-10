@@ -1,0 +1,29 @@
+# Unity Temp Klasörü (ÖNEMLİ!)
+Temp/
+
+# Unity Gereksiz Dosyalar
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Pp]ackages/
+UserSettings/
+MemoryCaptures/
+.DS_Store
+
+# Visual Studio Dosyaları
+.vscode/
+*.csproj
+*.sln
+*.userprefs
+
+# Unity Cache ve Metadata
+*.pidb
+*.suo
+*.user
+*.booproj
+*.svd
+*.tmp
+*.UnityLockFile
