@@ -25,7 +25,10 @@ public class TimesTableUI : MonoBehaviour
             GameObject newButton = Instantiate(buttonPrefab, buttonContainer);
             newButton.GetComponentInChildren<TextMeshProUGUI>().text = i.ToString();
             int number = i;
-            newButton.GetComponent<Button>().onClick.AddListener(() => ShowMultiplicationTable(number));
+            newButton.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                ShowMultiplicationTable(number);
+            });
         }
     }
 

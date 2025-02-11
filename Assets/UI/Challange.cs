@@ -11,6 +11,7 @@ public class Challange : MonoBehaviour
     [SerializeField] private TimesTableUI timesTableUI;
     private int number;
     private int correctAnswer;
+    private bool newQuestionNeeded = true;
 
 
     void Awake()
@@ -25,10 +26,9 @@ public class Challange : MonoBehaviour
     void GenerateQuestion()
     {
         number = timesTableUI.serializeNumber;
-        Debug.Log(number);
         int questionNumber = Random.Range(2, 12);
-        int result = number * questionNumber;
-        questionText.text = $"{number} x {questionNumber} = {result}";
+        correctAnswer = number * questionNumber;
+        questionText.text = $"{number} x {questionNumber} = ?";
     }
 
     void UpdateScores(int value)
@@ -44,6 +44,15 @@ public class Challange : MonoBehaviour
             wrongCountText.text = wrongCount.ToString();
         }
 
+    }
+
+    void Update()
+    {
+        if (timesTableUI.isSelected && newQuestionNeeded)
+        {
+            newQuestionNeeded = false;
+            GenerateQuestion();
+        }
     }
 
 }
